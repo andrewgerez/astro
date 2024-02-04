@@ -1,13 +1,15 @@
 ---
-import Cards from "../components/Cards";
+import CardsList from "../components/cards-list";
+import getCards from "../services/get-cards.ts";
 import "../global.css";
+
+const cardsList = await getCards();
 ---
 
 <html>
   <body class="dark">
-    <main class="w-full h-full">
-      <h1 class="font-bold text-gray-400">teste</h1>
-      <Cards />
+    <main class="w-[full] h-[100vh] flex items-center justify-items-center">
+    <CardsList cards={cardsList} />
     </main>
   </body>
 </html>
